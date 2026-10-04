@@ -1,0 +1,27 @@
+```gitignore
+# Environment
+.env
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Logs
+logs/
+*.log
+
+# dbt
+dbt_books/target/
+dbt_books/logs/
+dbt_books/dbt_packages/
+
+# Airflow
+airflow.db
+
+# OS / IDE
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+```

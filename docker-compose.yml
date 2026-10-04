@@ -1,0 +1,26 @@
+services:
+  airflow:
+    build:
+      context: ./dbt_books
+      dockerfile: Dockerfile
+
+    env_file:
+      - .env
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/airflow.db
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./src:/opt/airflow/src
+      - ./data:/opt/airflow/data
+      - ./logs:/opt/airflow/logs
+      - ./dbt_books:/opt/airflow/dbt_books
+      - ${USERPROFILE}/.dbt:/home/airflow/.dbt
+
+    command: standalone

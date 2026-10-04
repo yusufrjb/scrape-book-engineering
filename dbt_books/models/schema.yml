@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: stg_books
+    description: "Staging model for scraped book data"
+    columns:
+      - name: book_id
+        tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        tests:
+          - not_null
+
+      - name: price
+        tests:
+          - not_null
+
+      - name: rating
+        tests:
+          - not_null
+
+      - name: stock_quantity
+        tests:
+          - not_null
+
+  - name: dim_book
+    description: "Book dimension"
+    columns:
+      - name: book_id
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_book_inventory
+    description: "Book inventory facts"
+    columns:
+      - name: book_id
+        tests:
+          - not_null
+
+      - name: price
+        tests:
+          - not_null
+
+      - name: stock_quantity
+        tests:
+          - not_null
