@@ -464,22 +464,3 @@ dbt separates the analytical layer into staging, dimension, and fact models.
 
 Airflow and dbt are executed in a Docker-based environment to provide a reproducible setup.
 
----
-
-## Future Improvements
-
-Possible extensions for this project include:
-
-* Incremental dbt models
-* Additional data quality tests
-* PostgreSQL indexing and query optimization
-* Airflow scheduling
-* API-based data ingestion
-* BigQuery integration
-* Cloud-based data warehouse
-* Power BI dashboard
-* Monitoring and alerting
-* More robust retry and error-handling mechanisms
-* Partitioning for larger datasets
-
----
